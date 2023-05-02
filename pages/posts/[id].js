@@ -36,7 +36,6 @@ export const getServerSideProps = withCSR(async (ctx) => {
 
   return {
     props: {
-      //also passing down isError state to show a custom error component.
       isError,
       dehydratedState: dehydrate(queryClient),
     },
