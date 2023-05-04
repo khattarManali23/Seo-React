@@ -1,0 +1,7 @@
+export { default as HomePage } from './HomePage'
+export { default as Bannerpage } from './Bannerpage'
+export { default as PoppupModal } from './PoppupModal'
+export { default as BestSeller } from './BestSeller'
+export { default as MobileBanner } from './MobileBanner'
+export { default as HomePageCategories } from './HomePageCategories'
+export { default as HomePageBlogs } from './HomePageBlogs'
