@@ -1,12 +1,12 @@
-import Image from 'next/image'
+import Image from "next/image";
 // import React from 'react'
-import Link from 'next/link'
-import { IoMdCall } from 'react-icons/io'
-import { MdMailOutline } from 'react-icons/md'
-import errow from '../../assets/hercoPowerImages/errowImg.png'
-import bgBannerImage from '../../assets/hercoPowerImages/png/MobileView.png'
-import { FadeIn } from '../animate'
-import { AppButton, AppCarousel } from '../basics'
+import Link from "next/link";
+import { IoMdCall } from "react-icons/io";
+import { MdMailOutline } from "react-icons/md";
+import errow from "../../assets/hercoPowerImages/errowImg.png";
+import bgBannerImage from "../../assets/hercoPowerImages/png/MobileView.png";
+import { FadeIn } from "../animate";
+import { AppButton, AppCarousel } from "../basics";
 
 export default function MobileBanner({
   homeBanner,
@@ -21,7 +21,7 @@ export default function MobileBanner({
       <div
         style={{
           background: `url("${bgBannerImage?.src}")`,
-          backgroundSize: '100% 100%',
+          backgroundSize: "100% 100%",
         }}
         className="absolute h-full w-screen  top-0 left-0"
       />
@@ -34,12 +34,12 @@ export default function MobileBanner({
                   <div
                     className={`text-white font-black w-full h-[23px] flex pt-auto items-center justify-between overflow-hidden m-0 text-[22px]`}
                   >
-                    {`power`?.split('')?.map((letter) => (
+                    {`power`?.split("")?.map((letter) => (
                       <span key={letter}>{letter}</span>
                     ))}
-                    &nbsp;{' '}
+                    &nbsp;{" "}
                     <span className="absolute -top-0 z-1 right-7">
-                      {' '}
+                      {" "}
                       <Image
                         loading="lazy"
                         src={ImageIcon}
@@ -47,21 +47,21 @@ export default function MobileBanner({
                         width={20}
                         alt="edveg"
                       />
-                    </span>{' '}
+                    </span>{" "}
                     &nbsp;
-                    {`up`?.split('')?.map((letter) => (
+                    {`up`?.split("")?.map((letter) => (
                       <span key={letter}>{letter}</span>
-                    ))}{' '}
+                    ))}{" "}
                   </div>
 
                   <div
                     className={`text-white text-sm font-black h-[17px] flex items-start justify-between overflow-hidden m-0 `}
                   >
-                    {`business`?.split('')?.map((letter) => (
+                    {`business`?.split("")?.map((letter) => (
                       <span key={letter}>{letter}</span>
-                    ))}{' '}
+                    ))}{" "}
                     &nbsp;
-                    {`with`?.split('')?.map((letter) => (
+                    {`with`?.split("")?.map((letter) => (
                       <span key={letter}>{letter}</span>
                     ))}
                   </div>
@@ -71,11 +71,11 @@ export default function MobileBanner({
                              flex justify-between
                                 `}
                   >
-                    {`herco`?.split('')?.map((letter) => (
+                    {`herco`?.split("")?.map((letter) => (
                       <span key={letter}>{letter}</span>
-                    ))}{' '}
+                    ))}{" "}
                     &nbsp;
-                    {`transformers.`?.split('')?.map((letter) => (
+                    {`transformers.`?.split("")?.map((letter) => (
                       <span key={letter}>{letter}</span>
                     ))}
                   </div>
@@ -86,19 +86,19 @@ export default function MobileBanner({
                   <div
                     className={`text-white  font-black w-full h-[23px] flex items-center justify-between overflow-hidden m-0 text-[22px]`}
                   >
-                    {`unleash`?.split('')?.map((letter) => (
+                    {`unleash`?.split("")?.map((letter) => (
                       <span key={letter}>{letter}</span>
-                    ))}{' '}
+                    ))}{" "}
                   </div>
 
                   <div
                     className={`text-white text-sm font-black h-[17px] flex justify-between overflow-hidden m-0 `}
                   >
-                    {`your`?.split('')?.map((letter) => (
+                    {`your`?.split("")?.map((letter) => (
                       <span key={letter}>{letter}</span>
-                    ))}{' '}
+                    ))}{" "}
                     &nbsp;
-                    {`power`?.split('')?.map((letter) => (
+                    {`power`?.split("")?.map((letter) => (
                       <span key={letter}>{letter}</span>
                     ))}
                   </div>
@@ -107,9 +107,9 @@ export default function MobileBanner({
                              flex justify-between
                                 `}
                   >
-                    {`performance`?.split('')?.map((letter) => (
+                    {`performance`?.split("")?.map((letter) => (
                       <span key={letter}>{letter}</span>
-                    ))}{' '}
+                    ))}{" "}
                   </div>
                 </div>
               </div>
@@ -118,7 +118,7 @@ export default function MobileBanner({
                   <div
                     className={`text-white font-black w-full h-[20px] flex items-center justify-between overflow-hidden m-0 text-sm`}
                   >
-                    {`transforming`?.split('')?.map((letter) => (
+                    {`transforming`?.split("")?.map((letter) => (
                       <span key={letter}>{letter}</span>
                     ))}
                   </div>
@@ -126,11 +126,11 @@ export default function MobileBanner({
                   <div
                     className={`text-white text-sm font-black h-[17px] flex justify-between overflow-hidden m-0 `}
                   >
-                    {`power`?.split('')?.map((letter) => (
+                    {`power`?.split("")?.map((letter) => (
                       <span key={letter}>{letter}</span>
-                    ))}{' '}
+                    ))}{" "}
                     &nbsp;
-                    {`with`?.split('')?.map((letter) => (
+                    {`with`?.split("")?.map((letter) => (
                       <span key={letter}>{letter}</span>
                     ))}
                   </div>
@@ -140,7 +140,7 @@ export default function MobileBanner({
                              flex justify-between
                                 `}
                   >
-                    {`passion`?.split('')?.map((letter) => (
+                    {`passion`?.split("")?.map((letter) => (
                       <span key={letter}>{letter}</span>
                     ))}
                   </div>
@@ -154,7 +154,7 @@ export default function MobileBanner({
                   <AppButton
                     variant="contained"
                     size="small"
-                    title={'Enquire now'}
+                    title={"Enquire now"}
                   />
                 </Link>
                 <Image
@@ -163,7 +163,7 @@ export default function MobileBanner({
                   height={16}
                   src={errow}
                   className=" object-cover  ml-16 animate-opacityAnimation"
-                  style={{ transform: 'matrix(0.53, 0.85, 0.85, -0.53, 0, 0)' }}
+                  style={{ transform: "matrix(0.53, 0.85, 0.85, -0.53, 0, 0)" }}
                   alt="arrow"
                 />
               </div>
@@ -210,7 +210,7 @@ export default function MobileBanner({
                           </a>
                         </div>
                       </div>
-                    )
+                    );
                   })}
                 </AppCarousel>
               </div>
@@ -222,21 +222,21 @@ export default function MobileBanner({
         <div>
           <a href={`tel:${telNumberIndia}`} target="_blank" rel="noreferrer">
             <span className=" flex items-center hover:text-theme-primary-main text-[10px] font-normal">
-              <IoMdCall className="mr-1 text-white  text-[10px]" />{' '}
+              <IoMdCall className="mr-1 text-white  text-[10px]" />{" "}
               <span className=" text-white capitalize">
-                {' '}
+                {" "}
                 {shopContactNoIndia}
               </span>
             </span>
           </a>
           <a href={`mailto:${shopEmailIndia}`} target="_blank" rel="noreferrer">
             <span className=" flex items-center hover:text-theme-primary-main text-[10px] font-normal mt-[2px]">
-              <MdMailOutline className="mr-1 text-white text-[10px]" />{' '}
+              <MdMailOutline className="mr-1 text-white text-[10px]" />{" "}
               <span className=" text-white"> {shopEmailIndia}</span>
             </span>
           </a>
         </div>
       </div>
     </div>
-  )
+  );
 }

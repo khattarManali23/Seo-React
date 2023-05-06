@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
-import { useDispatch, useSelector } from 'react-redux'
-import { AppModal, ErrorScreen, LoadingScreen } from 'src/components/basics'
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import { useDispatch, useSelector } from "react-redux";
+import { AppModal, ErrorScreen, LoadingScreen } from "../../components/basics";
 import {
   addManualQuantityInCart,
   addToCart,
   decreaseQuantityInCart,
   increaseQuantityInCart,
-} from 'src/redux/slices/cartSlice'
-import { useGetProductById } from 'src/services/productServices'
+} from "../../redux /slices/cartSlice";
+import { useGetProductById } from "../../services/productServices";
 import {
   Grid,
   Container,
@@ -16,33 +16,33 @@ import {
   Tooltip,
   Stack,
   Skeleton,
-} from '@mui/material'
+} from "@mui/material";
 import {
   ProductDetailsCarousel,
   ProductDetailsSummary,
   RelatedProducts,
-} from 'src/components/product'
-import { handleToastOpen } from 'src/redux/slices/toastSlice'
+} from "../../components /product";
+import { handleToastOpen } from "../../redux /slices/toastSlice";
 // import { getImageForCart } from 'src/utils/utils-fun'
-import { FaFacebookF, FaTwitter, FaWhatsapp } from 'react-icons/fa'
-import { BiLink } from 'react-icons/bi'
-import { ProductEnquiryForm } from 'src/components/forms'
-import { AppData } from 'src/data/app-data'
-import { FadeRight } from 'src/components/animate'
+import { FaFacebookF, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { BiLink } from "react-icons/bi";
+import { ProductEnquiryForm } from "../../components /forms";
+import { AppData } from "../../data/app-data";
+import { FadeRight } from "../../components /animate";
 
 const ProductDetailCard = ({ url, currentLocation }) => {
-  const { push } = useRouter()
-  const router = useRouter()
-  const { productSlug } = router.query
+  const { push } = useRouter();
+  const router = useRouter();
+  const { productSlug } = router.query;
 
-  const dispatch = useDispatch()
-  const { data, isLoading, isError } = useGetProductById(productSlug)
-  console.log('datnna', data)
+  const dispatch = useDispatch();
+  const { data, isLoading, isError } = useGetProductById(productSlug);
+  console.log("datnna", data);
 
-  const { cartItems } = useSelector((state) => state.cart)
-  console.log('cartItems', cartItems)
-  const { userType, userData } = useSelector((state) => state.user)
-  const [showEnquiryModal, setShowEnquiryModal] = useState(false)
+  const { cartItems } = useSelector((state) => state.cart);
+  console.log("cartItems", cartItems);
+  const { userType, userData } = useSelector((state) => state.user);
+  const [showEnquiryModal, setShowEnquiryModal] = useState(false);
 
   // useEffect(() => {
   //   const itemIndex = cartItems?.findIndex(
@@ -56,68 +56,68 @@ const ProductDetailCard = ({ url, currentLocation }) => {
   //   }
   // }, [cartItems, url, userType, data])
 
-  const [quantity, setQuantity] = useState(1)
-  const { shopContactNoIndia } = AppData?.webSiteData
-  const telNumberIndia = shopContactNoIndia?.split('/')[0]?.replace('-', '')
-  const initialUrl = url?.split('&')[0]
+  const [quantity, setQuantity] = useState(1);
+  const { shopContactNoIndia } = AppData?.webSiteData;
+  const telNumberIndia = shopContactNoIndia?.split("/")[0]?.replace("-", "");
+  const initialUrl = url?.split("&")[0];
 
-  if (isLoading) return <LoadingScreen />
+  if (isLoading) return <LoadingScreen />;
 
-  if (isError) return <ErrorScreen />
+  if (isError) return <ErrorScreen />;
 
   const handleVariantChange = (variantData, title, option) => {
-    console.log('variantData', variantData, title, option)
+    console.log("variantData", variantData, title, option);
     // making copy of the variant object
-    let variants = { ...variantData }
+    let variants = { ...variantData };
     let newVariant = {
       title: title?.toLowerCase(),
       value: option?.toLowerCase(),
-    }
-    console.log('newVariant', newVariant, variantData)
+    };
+    console.log("newVariant", newVariant, variantData);
     // finding index of the value to be replaced
     const index = variantData?.findIndex(
       (item) => item?.title?.toLowerCase() == title?.toLowerCase()
-    )
-    console.log('index', index)
+    );
+    console.log("index", index);
     // replacing the new value in data
-    variants[index] = newVariant
-    console.log('variants', variants)
+    variants[index] = newVariant;
+    console.log("variants", variants);
     // creating variant url
     const finalHalf = Object?.values(variants)
       ?.map((item) => {
-        return `&${item?.title}=${item?.value}`
+        return `&${item?.title}=${item?.value}`;
       })
-      ?.join('')
+      ?.join("");
     // linking both url together
-    push(`${currentLocation}/${initialUrl + finalHalf}`)
-  }
+    push(`${currentLocation}/${initialUrl + finalHalf}`);
+  };
   const handleAddToCart = () => {
     // const finalImagesForCart = getImageForCart(data, userType)
-    let copyProductForCart = { ...data }
-    console.log('copyProductForCart', copyProductForCart)
+    let copyProductForCart = { ...data };
+    console.log("copyProductForCart", copyProductForCart);
     copyProductForCart.images = data?.images?.map((item) => {
       return {
         url: item?.values[0]?.url,
         alt: item?.values[0]?.alt,
-      }
-    })
+      };
+    });
 
     dispatch(
       addToCart({
         product: { ...copyProductForCart, quantity: 1 },
       })
-    )
-    dispatch(handleToastOpen({ message: 'Added To Cart', status: 'success' }))
-  }
+    );
+    dispatch(handleToastOpen({ message: "Added To Cart", status: "success" }));
+  };
   const handleIncreaseQuantity = () => {
     dispatch(
       increaseQuantityInCart({
         product: data,
         userType: userType?.toLowerCase(),
       })
-    )
-    setQuantity(quantity + 1)
-  }
+    );
+    setQuantity(quantity + 1);
+  };
   const handleDecreaseQuantity = () => {
     if (quantity > 1) {
       dispatch(
@@ -125,10 +125,10 @@ const ProductDetailCard = ({ url, currentLocation }) => {
           product: data,
           userType: userType?.toLowerCase(),
         })
-      )
-      setQuantity(quantity - 1)
+      );
+      setQuantity(quantity - 1);
     }
-  }
+  };
   const handleManualAddOfQuantity = (value) => {
     dispatch(
       addManualQuantityInCart({
@@ -136,13 +136,13 @@ const ProductDetailCard = ({ url, currentLocation }) => {
         userType: userType?.toLowerCase(),
         quantity: Number(value) > 1 ? Number(value) : 1,
       })
-    )
-    setQuantity(Number(value) > 1 ? Number(value) : 1)
-  }
+    );
+    setQuantity(Number(value) > 1 ? Number(value) : 1);
+  };
 
   return (
     <>
-      <FadeRight durationTime={'1s'}>
+      <FadeRight durationTime={"1s"}>
         <div className="my-5 md:my-10">
           {/* <NextSeo
           
@@ -184,10 +184,10 @@ const ProductDetailCard = ({ url, currentLocation }) => {
         </div>
         <AppModal
           open={showEnquiryModal}
-          title={'Product Enquiry'}
+          title={"Product Enquiry"}
           handleClose={() => setShowEnquiryModal(false)}
           fullWidth
-          maxWidth={'xs'}
+          maxWidth={"xs"}
         >
           <ProductEnquiryForm
             userData={userData}
@@ -198,10 +198,10 @@ const ProductDetailCard = ({ url, currentLocation }) => {
         </AppModal>
       </FadeRight>
     </>
-  )
-}
+  );
+};
 
-export default ProductDetailCard
+export default ProductDetailCard;
 
 const ProductDetails = ({
   data,
@@ -217,14 +217,14 @@ const ProductDetails = ({
   telNumberIndia,
   isLoading,
 }) => {
-  const [tooltip, setTooltip] = useState(false)
+  const [tooltip, setTooltip] = useState(false);
   const handleCopyPageUrl = () => {
-    navigator.clipboard.writeText(window.location.href)
-    setTooltip(true)
+    navigator.clipboard.writeText(window.location.href);
+    setTooltip(true);
     setTimeout(() => {
-      setTooltip(false)
-    }, 2000)
-  }
+      setTooltip(false);
+    }, 2000);
+  };
   return (
     <Container
     // maxWidth={themeStretch ? false : 'lg'}
@@ -281,7 +281,7 @@ const ProductDetails = ({
                         disablePortal: true,
                       }}
                       onClose={() => {
-                        setTooltip(false)
+                        setTooltip(false);
                       }}
                       open={tooltip}
                       disableFocusListener
@@ -359,8 +359,8 @@ const ProductDetails = ({
 
       {/* {isLoading && <SkeletonProductDetails />} */}
     </Container>
-  )
-}
+  );
+};
 
 // export async function getServerSideProps(context) {
 //   const nextStaticUrl = context.resolvedUrl?.split('_')?.pop()

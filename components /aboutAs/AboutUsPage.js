@@ -1,18 +1,18 @@
 // // import React from 'react'
-import HeadingAboutUs from './HeadingAboutUs'
-import Services from './Services'
-import SinceHerco from './SinceHerco'
+import HeadingAboutUs from "./HeadingAboutUs";
+import Services from "./Services";
+import SinceHerco from "./SinceHerco";
 // import VideoLink from ''
-import { AppButton } from '../basics'
-import useDeviceType from 'src/custom-hooks/useDeviceType'
-import Link from 'next/link'
-import dynamic from 'next/dynamic'
+import { AppButton } from "../basics";
+import useDeviceType from "../../custom-hooks/useDeviceType";
+import Link from "next/link";
+import dynamic from "next/dynamic";
 
-const DynamicVideoLink = dynamic(() => import('./VideoLink'), {
+const DynamicVideoLink = dynamic(() => import("./VideoLink"), {
   // loading: () => <p>Loading...</p>,
-})
+});
 export default function AboutUsPage() {
-  const { isMobile } = useDeviceType()
+  const { isMobile } = useDeviceType();
   return (
     <div className="my-5 sm:my-10">
       <HeadingAboutUs />
@@ -31,14 +31,14 @@ export default function AboutUsPage() {
         <div className="flex justify-center sm:pt-10 pt-5">
           <Link href="/about-us">
             <AppButton
-              size={isMobile ? 'medium' : 'large'}
-              variant={isMobile ? 'outlined' : 'contained'}
-              title={'Know more'}
+              size={isMobile ? "medium" : "large"}
+              variant={isMobile ? "outlined" : "contained"}
+              title={"Know more"}
             />
           </Link>
         </div>
       </div>
       <Services isMobile={isMobile} />
     </div>
-  )
+  );
 }

@@ -1,13 +1,14 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 // @mui
-import { Grid, Card, CardHeader, Typography } from '@mui/material'
-import EmptyContent from 'src/components/empty-content'
-import CheckoutSummary from '../CheckoutSummary'
-import CheckoutCartProductList from './CheckoutCartProductList'
-import { AppButton } from 'src/components/basics'
-import { IoIosArrowBack } from 'react-icons/io'
-import emptyCart from '../../../assets/images/empty_cart.jpeg'
-import { useRouter } from 'next/router'
+import { Grid, Card, CardHeader, Typography } from "@mui/material";
+// import EmptyContent from
+import CheckoutSummary from "../CheckoutSummary";
+import CheckoutCartProductList from "./CheckoutCartProductList";
+import { AppButton } from "../../basics";
+import { IoIosArrowBack } from "react-icons/io";
+import emptyCart from "../../../assets/images/empty_cart.jpeg";
+import { useRouter } from "next/router";
+import EmptyContent from "components /empty-content/EmptyContent";
 // ----------------------------------------------------------------------
 
 CheckoutCart.propTypes = {
@@ -21,7 +22,7 @@ CheckoutCart.propTypes = {
   onDecreaseQuantity: PropTypes.func,
   onIncreaseQuantity: PropTypes.func,
   onApplyDiscount: PropTypes.func,
-}
+};
 
 export default function CheckoutCart({
   cart,
@@ -34,17 +35,17 @@ export default function CheckoutCart({
   onIncreaseQuantity,
   onApplyDiscount,
 }) {
-  const { push } = useRouter()
-  const totalItems = cart?.length
-  const isEmptyCart = !cart?.length
+  const { push } = useRouter();
+  const totalItems = cart?.length;
+  const isEmptyCart = !cart?.length;
   return (
     <>
       <AppButton
         className="mb-1"
         color="inherit"
         startIcon={<IoIosArrowBack />}
-        onClick={() => push('/p')}
-        title={'Continue Shopping'}
+        onClick={() => push("/p")}
+        title={"Continue Shopping"}
       />
       <Grid container spacing={2}>
         <Grid item xs={12} md={8}>
@@ -53,7 +54,7 @@ export default function CheckoutCart({
               title={
                 <Typography variant="h6">
                   Cart
-                  <Typography component="span" sx={{ color: 'text.secondary' }}>
+                  <Typography component="span" sx={{ color: "text.secondary" }}>
                     &nbsp;({totalItems} item)
                   </Typography>
                 </Typography>
@@ -102,5 +103,5 @@ export default function CheckoutCart({
         </Grid>
       </Grid>
     </>
-  )
+  );
 }

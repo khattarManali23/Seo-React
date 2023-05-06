@@ -1,16 +1,16 @@
-import { Box } from '@mui/material'
+import { Box } from "@mui/material";
 import {
   AppNoProducts,
   AppSearchBox,
   ErrorScreen,
   LoadingScreen,
-} from '../basics'
-import { FadeRight } from '../animate'
-import { ProductFilterSideBar } from '../product'
-import ProductsCard from './ProductsCard'
-import { useEffect, useState } from 'react'
-import { useGetAllFilteredProducts } from 'src/services/productServices'
-import { useGetAllCategories } from 'src/services/categoryServices'
+} from "../basics";
+import { FadeRight } from "../animate";
+import { ProductFilterSideBar } from "../product";
+import ProductsCard from "./ProductsCard";
+import { useEffect, useState } from "react";
+import { useGetAllFilteredProducts } from "../../services/productServices";
+import { useGetAllCategories } from "../../services/categoryServices";
 
 const ProductListCard = ({
   initialUrl,
@@ -21,25 +21,25 @@ const ProductListCard = ({
   redirectUrl,
 }) => {
   //   const [anchorEl, setAnchorEl] = useState(null)
-  const [searchValue, setSearchValue] = useState(null)
+  const [searchValue, setSearchValue] = useState(null);
   const [filterState, setFilterState] = useState({
-    category: '',
-    search: '',
-  })
+    category: "",
+    search: "",
+  });
 
-  const productFetchUrl = `?category=${filterState?.category}&search=${filterState?.search}`
+  const productFetchUrl = `?category=${filterState?.category}&search=${filterState?.search}`;
 
   const {
     data,
     isLoading: productIsLoading,
     isError,
-  } = useGetAllFilteredProducts(initialUrl + productFetchUrl)
+  } = useGetAllFilteredProducts(initialUrl + productFetchUrl);
   // const {
   //   data: categories,
   //   // isLoading: categoriesLoading,
   //   isError: categoriesError,
   // } = useGetAllCategories()
-  const categories = []
+  const categories = [];
 
   // ---------------------------------------------------------------------
 
@@ -56,34 +56,37 @@ const ProductListCard = ({
   //   }
   useEffect(() => {
     if (searchValue === null && querySearchValue) {
-      setFilterState({ ...filterState, ['search']: querySearchValue })
+      setFilterState({ ...filterState, ["search"]: querySearchValue });
     } else {
       const slugTimer = setTimeout(() => {
-        setFilterState({ ...filterState, ['search']: searchValue || '' })
-      }, 1000)
+        setFilterState({ ...filterState, ["search"]: searchValue || "" });
+      }, 1000);
       return () => {
-        clearTimeout(slugTimer)
-      }
+        clearTimeout(slugTimer);
+      };
     }
-  }, [searchValue, querySearchValue])
-  console.log(querySearchValue)
+  }, [searchValue, querySearchValue]);
+  console.log(querySearchValue);
   const handleCategoryFilter = (e) => {
-    let categoryArray = filterState?.category?.split(',')
+    let categoryArray = filterState?.category?.split(",");
     if (e.target.checked) {
-      categoryArray = [...categoryArray, e.target.value]
-      setFilterState({ ...filterState, ['category']: categoryArray?.join(',') })
+      categoryArray = [...categoryArray, e.target.value];
+      setFilterState({
+        ...filterState,
+        ["category"]: categoryArray?.join(","),
+      });
     } else {
-      let newArray = categoryArray?.filter((item) => item !== e.target.value)
-      setFilterState({ ...filterState, ['category']: newArray?.join(',') })
+      let newArray = categoryArray?.filter((item) => item !== e.target.value);
+      setFilterState({ ...filterState, ["category"]: newArray?.join(",") });
     }
-  }
+  };
   // ---------------------------------------------------------------------
-  if (isError || categoriesError) return <ErrorScreen />
-  console.log('querySearchValue', querySearchValue)
+  if (isError || categoriesError) return <ErrorScreen />;
+  console.log("querySearchValue", querySearchValue);
   return (
     <>
       <div className="w-11/12 sm:container mx-auto py-2 sm:py-5">
-        <FadeRight durationTime={'1s'}>
+        <FadeRight durationTime={"1s"}>
           <div className=" flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-between w-mobile-w sm:w-11/12 mx-auto ">
             <div className="sm:w-5/12 w-full">
               <AppSearchBox
@@ -93,7 +96,7 @@ const ProductListCard = ({
                     : searchValue
                 }
                 handleSearch={() =>
-                  setFilterState({ ...filterState, ['search']: searchValue })
+                  setFilterState({ ...filterState, ["search"]: searchValue })
                 }
                 onChange={(e) => setSearchValue(e.target.value)}
                 placeholder="Search for items..."
@@ -189,7 +192,7 @@ const ProductListCard = ({
         </FadeRight>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ProductListCard
+export default ProductListCard;

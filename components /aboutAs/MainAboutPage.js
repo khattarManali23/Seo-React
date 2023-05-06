@@ -1,20 +1,21 @@
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
-import { BsFillCloudArrowDownFill } from 'react-icons/bs'
-import { FaAngleDoubleRight } from 'react-icons/fa'
-import about from '../../assets/hercoPowerImages/png/aboutHandShake.jpg'
-import { AppButton } from '../basics'
-import TimeLine from './TimeLine'
-import Link from 'next/link'
-import { History } from 'src/data/app-data'
-import { Skeleton } from '@mui/material'
+/* eslint-disable react/no-unescaped-entities */
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { BsFillCloudArrowDownFill } from "react-icons/bs";
+import { FaAngleDoubleRight } from "react-icons/fa";
+import about from "../../assets/hercoPowerImages/png/aboutHandShake.jpg";
+import { AppButton } from "../basics";
+import TimeLine from "./TimeLine";
+import Link from "next/link";
+import { History } from "../../data/app-data";
+import { Skeleton } from "@mui/material";
 export default function MainAboutPage() {
-  const [pageLoading, setPageLoading] = useState()
+  const [pageLoading, setPageLoading] = useState();
   useEffect(() => {
     setTimeout(() => {
-      setPageLoading(false)
-    }, 1000)
-  }, [])
+      setPageLoading(false);
+    }, 1000);
+  }, []);
   return (
     <section>
       <div className="mx-auto w-w-main">
@@ -118,7 +119,7 @@ export default function MainAboutPage() {
                 <a target="_blank" download>
                   <AppButton
                     variant="contained"
-                    title={' Download Company Profile '}
+                    title={" Download Company Profile "}
                     startIcon={
                       <BsFillCloudArrowDownFill
                         size={35}
@@ -135,9 +136,9 @@ export default function MainAboutPage() {
       <div className="mx-auto w-w-main pb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            {' '}
+            {" "}
             <p className="mt-10 font-raleway text-lg font-bold md:text-5xl">
-              HERCO: Advancing tomorrow through{' '}
+              HERCO: Advancing tomorrow through{" "}
               <span className="theme-heading">Innovation.</span>
             </p>
             <p className="mb-6 mt-0 font-raleway text-sm  font-bold sm:mt-10 sm:text-base">
@@ -145,7 +146,7 @@ export default function MainAboutPage() {
             </p>
           </div>
           <div>
-            {' '}
+            {" "}
             <p className="my-0 text-justify font-inter text-base leading-9 sm:my-10 sm:text-left">
               “HERCO” has grown over the years serving the nation&apos;s largest
               organization Indian Railways. Innovations and diversification led
@@ -158,5 +159,5 @@ export default function MainAboutPage() {
         </div>
       </div>
     </section>
-  )
+  );
 }

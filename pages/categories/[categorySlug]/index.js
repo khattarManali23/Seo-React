@@ -1,43 +1,33 @@
-import { Tab, Tabs } from '@mui/material'
-import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { FadeRight } from 'src/components/animate'
-import {
-  AppHeading,
-  AppNoProducts,
-  ErrorScreen,
-  LoadingScreen,
-} from 'src/components/basics'
-import { CategoriesCard, ProductsCard } from 'src/components/cards'
-import { useGetAllProductsByAnyCategoryById } from 'src/services/productServices'
-import {
-  useGetAllOthersProductByCategory,
-  useGetSubCategoryById,
-} from 'src/services/subCategoryServices'
-import { useGetSuperSubCategoryById } from 'src/services/superSubCategoryServices'
+import { Tab, Tabs } from "@mui/material";
+import { FadeRight } from "components /animate";
+import { AppNoProducts, ErrorScreen, LoadingScreen } from "components /basics";
+import { ProductsCard } from "components /cards";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useGetAllProductsByAnyCategoryById } from "services/productServices";
 
 const SubCategoriesPage = () => {
-  const { query } = useRouter()
-  const router = useRouter()
+  const { query } = useRouter();
+  const router = useRouter();
   // const id = query?.slug?.split('-')?.pop()
-  const slug = query.categorySlug
-  console.log('slug', slug)
+  const slug = query.categorySlug;
+  console.log("slug", slug);
 
-  const { userData, userType } = useSelector((state) => state.user)
-  const [tabValue, setTabValue] = useState(0)
-  const [productFetchId, setProductFetchId] = useState('')
+  const { userData, userType } = useSelector((state) => state.user);
+  const [tabValue, setTabValue] = useState(0);
+  const [productFetchId, setProductFetchId] = useState("");
   useEffect(() => {
-    setProductFetchId(slug)
-  }, [slug])
+    setProductFetchId(slug);
+  }, [slug]);
   // const { data, isLoading, isError } = useGetSubCategoryById(slug)
 
   const {
     data: products,
     isLoading: productsLoading,
     isError: productsError,
-  } = useGetAllProductsByAnyCategoryById(slug)
-  console.log('products', products)
+  } = useGetAllProductsByAnyCategoryById(slug);
+  console.log("products", products);
   // const {
   //   data: otherProducts,
   //   isLoading: otherProductsLoading,
@@ -56,27 +46,27 @@ const SubCategoriesPage = () => {
     // otherProductsLoading ||
     // superSubCategoriesLoading
   )
-    return <LoadingScreen />
+    return <LoadingScreen />;
 
   if (
     // isError ||
     productsError
     // || otherProductsError || superSubCategoriesError
   )
-    return <ErrorScreen />
+    return <ErrorScreen />;
 
   const handleChange = (event, newValue) => {
-    setTabValue(newValue)
-    setProductFetchId(newValue === 0 ? slug : newValue)
+    setTabValue(newValue);
+    setProductFetchId(newValue === 0 ? slug : newValue);
     if (newValue === 0) {
       // push(`slug=?${query.categorySlug}`)
     } else {
       // push(`slug=?${query.categorySlug}?${newValue}`)
     }
-  }
+  };
   return (
     <>
-      <FadeRight durationTime={'1s'}>
+      <FadeRight durationTime={"1s"}>
         <div className="mx-auto my-10 flex flex-col items-center justify-center md:container">
           <div className="mx-auto w-full md:w-8/12 ">
             {/* <Tabs
@@ -134,7 +124,7 @@ const SubCategoriesPage = () => {
         </div>
       </FadeRight>
     </>
-  )
-}
+  );
+};
 
-export default SubCategoriesPage
+export default SubCategoriesPage;

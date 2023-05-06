@@ -1,17 +1,18 @@
-import PropTypes from 'prop-types'
-import { useState } from 'react'
+import PropTypes from "prop-types";
+import { useState } from "react";
 // @mui
-import { Grid, Stack } from '@mui/material'
-import CheckoutSummary from '../CheckoutSummary'
-import { useDispatch } from 'react-redux'
-import { AppButton, AppModal } from 'src/components/basics'
-import { IoIosArrowBack } from 'react-icons/io'
-import BillingAndShippingAccordion from './BillingAndShippingAccordion'
-import AddAddressForm from 'src/components/my-account/AddressForm'
+import { Grid, Stack } from "@mui/material";
+import CheckoutSummary from "../CheckoutSummary";
+import { useDispatch } from "react-redux";
+import { AppButton, AppModal } from "../../basics";
+import { IoIosArrowBack } from "react-icons/io";
+import BillingAndShippingAccordion from "./BillingAndShippingAccordion";
+// import AddAddressForm from "../components/my-account/AddressForm";
 import {
   checkoutUserBillingAddress,
   checkoutUserShippingAddress,
-} from 'src/redux/slices/cartSlice'
+} from "redux /slices/cartSlice";
+import AddAddressForm from "components /my-account/AddressForm";
 
 // ----------------------------------------------------------------------
 
@@ -23,7 +24,7 @@ CheckoutAddress.propTypes = {
   priceSummary: PropTypes.object,
   onNextStep: PropTypes.func,
   onBackStep: PropTypes.func,
-}
+};
 
 export default function CheckoutAddress({
   userData,
@@ -34,38 +35,38 @@ export default function CheckoutAddress({
   billingAddress,
   shippingAddress,
 }) {
-  const dispatch = useDispatch()
-  const [open, setOpen] = useState(false)
-  const [singleAddress, setSingleAddress] = useState()
-  const [expanded, setExpanded] = useState('shippingAccordion')
+  const dispatch = useDispatch();
+  const [open, setOpen] = useState(false);
+  const [singleAddress, setSingleAddress] = useState();
+  const [expanded, setExpanded] = useState("shippingAccordion");
   const handleChangeAccordion = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false)
-  }
+    setExpanded(isExpanded ? panel : false);
+  };
   const handleOpen = (item) => {
-    setSingleAddress(item)
-    setOpen(true)
-  }
+    setSingleAddress(item);
+    setOpen(true);
+  };
   const handleClose = () => {
-    setSingleAddress({})
-    setOpen(false)
-  }
+    setSingleAddress({});
+    setOpen(false);
+  };
   const onCreateShipping = (address) => {
     if (billingAddress !== null) {
-      dispatch(checkoutUserShippingAddress(address))
-      onNextStep()
+      dispatch(checkoutUserShippingAddress(address));
+      onNextStep();
     } else {
-      dispatch(checkoutUserShippingAddress(address))
-      setExpanded('billingAccordion')
+      dispatch(checkoutUserShippingAddress(address));
+      setExpanded("billingAccordion");
     }
-  }
+  };
   const onCreateBilling = (address) => {
     if (shippingAddress !== null) {
-      dispatch(checkoutUserBillingAddress(address))
-      onNextStep()
+      dispatch(checkoutUserBillingAddress(address));
+      onNextStep();
     } else {
-      setExpanded('shippingAccordion')
+      setExpanded("shippingAccordion");
     }
-  }
+  };
   return (
     <>
       <Stack direction="row" justifyContent="space-between" sx={{ mb: 1 }}>
@@ -74,7 +75,7 @@ export default function CheckoutAddress({
           color="inherit"
           onClick={onBackStep}
           startIcon={<IoIosArrowBack />}
-          title={'Back'}
+          title={"Back"}
         />
       </Stack>
       <Grid container spacing={3}>
@@ -104,7 +105,7 @@ export default function CheckoutAddress({
       <AppModal
         fullWidth
         maxWidth="sm"
-        title={'Address Form'}
+        title={"Address Form"}
         open={open}
         handleClose={handleClose}
       >
@@ -114,12 +115,12 @@ export default function CheckoutAddress({
           userId={userData?._id}
           userData={userData}
           open={open}
-          defaultStatusLabel={''}
+          defaultStatusLabel={""}
           onClose={handleClose}
         />
       </AppModal>
     </>
-  )
+  );
 }
 
 // ----------------------------------------------------------------------

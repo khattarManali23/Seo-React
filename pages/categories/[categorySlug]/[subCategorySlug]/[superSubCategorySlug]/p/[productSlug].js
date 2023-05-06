@@ -1,11 +1,11 @@
 // import React from 'react'
-import { ProductDetailCard } from 'src/components/cards'
+import { ProductDetailCard } from "components /cards";
 
 export default function SuperSubCategoryProductDetailPage() {
-  const url = window.location?.href?.split('/')?.pop()
+  const url = window.location?.href?.split("/")?.pop();
   const currentLocation = window?.location?.href
-    ?.split('/')
+    ?.split("/")
     ?.slice(0, -1)
-    ?.join('/')
-  return <ProductDetailCard url={url} currentLocation={currentLocation} />
+    ?.join("/");
+  return <ProductDetailCard url={url} currentLocation={currentLocation} />;
 }

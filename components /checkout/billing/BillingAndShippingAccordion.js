@@ -1,5 +1,5 @@
 // import React from 'react'
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 // @mui
 import {
   Grid,
@@ -12,13 +12,14 @@ import {
   Accordion,
   Checkbox,
   FormControlLabel,
-} from '@mui/material'
-import { IoIosArrowDown } from 'react-icons/io'
-import { useGetAllAddressById } from 'src/services/addressServices'
-import { AppButton } from 'src/components/basics'
-import { useTheme } from '@emotion/react'
-import { BiPlus } from 'react-icons/bi'
-import LoadingScreen from 'src/components/basics/LoadingScreen'
+} from "@mui/material";
+import { IoIosArrowDown } from "react-icons/io";
+// import { useGetAllAddressById } from "../services/addressServices";
+import { AppButton } from "../../basics";
+import { useTheme } from "@emotion/react";
+import { BiPlus } from "react-icons/bi";
+import LoadingScreen from "../../basics/LoadingScreen";
+import { useGetAllAddressById } from "services/addressServices";
 
 function BillingAndShippingAccordion({
   expanded,
@@ -29,19 +30,19 @@ function BillingAndShippingAccordion({
   onCreateBilling,
   shippingAddress,
 }) {
-  const { data, isError, isLoading } = useGetAllAddressById(userData?._id)
+  const { data, isError, isLoading } = useGetAllAddressById(userData?._id);
 
-  const theme = useTheme()
+  const theme = useTheme();
 
   const handleSameAsShipping = (event) => {
     if (event.target.checked) {
-      onCreateBilling(shippingAddress)
+      onCreateBilling(shippingAddress);
     }
-  }
+  };
 
-  if (isLoading) return <LoadingScreen />
+  if (isLoading) return <LoadingScreen />;
 
-  if (isError) return <div>Error</div>
+  if (isError) return <div>Error</div>;
   return (
     <Card
       sx={{
@@ -54,8 +55,8 @@ function BillingAndShippingAccordion({
           p: 2,
           background: theme.palette.background.paper,
         }}
-        expanded={expanded === 'shippingAccordion'}
-        onChange={handleChangeAccordion('shippingAccordion')}
+        expanded={expanded === "shippingAccordion"}
+        onChange={handleChangeAccordion("shippingAccordion")}
       >
         <AccordionSummary
           expandIcon={<IoIosArrowDown />}
@@ -71,7 +72,7 @@ function BillingAndShippingAccordion({
               variant="soft"
               onClick={handleOpen}
               startIcon={<BiPlus />}
-              title={'Add New addresss'}
+              title={"Add New addresss"}
             />
           </Stack>
           <Grid container spacing={3}>
@@ -84,7 +85,7 @@ function BillingAndShippingAccordion({
                     handleOpen={() => handleOpen(address)}
                   />
                 </Grid>
-              )
+              );
             })}
           </Grid>
         </AccordionDetails>
@@ -94,8 +95,8 @@ function BillingAndShippingAccordion({
           p: 2,
           background: theme.palette.background.paper,
         }}
-        expanded={expanded === 'billingAccordion'}
-        onChange={handleChangeAccordion('billingAccordion')}
+        expanded={expanded === "billingAccordion"}
+        onChange={handleChangeAccordion("billingAccordion")}
       >
         <AccordionSummary
           expandIcon={<IoIosArrowDown />}
@@ -106,15 +107,15 @@ function BillingAndShippingAccordion({
         </AccordionSummary>
         <AccordionDetails>
           <Stack
-            display={'flex'}
+            display={"flex"}
             direction="row"
-            alignItems={'center'}
+            alignItems={"center"}
             justifyContent="space-between"
             sx={{ mb: 1 }}
           >
-            <Box display={'flex'} alignItems={'center'}>
+            <Box display={"flex"} alignItems={"center"}>
               <FormControlLabel
-                label={'Same as Shipping Address'}
+                label={"Same as Shipping Address"}
                 control={<Checkbox onChange={handleSameAsShipping} />}
               />
             </Box>
@@ -123,7 +124,7 @@ function BillingAndShippingAccordion({
               variant="soft"
               onClick={handleOpen}
               startIcon={<BiPlus />}
-              title={'Add New addresss'}
+              title={"Add New addresss"}
             />
           </Stack>
           <Grid container spacing={3}>
@@ -136,26 +137,26 @@ function BillingAndShippingAccordion({
                     handleOpen={() => handleOpen(address)}
                   />
                 </Grid>
-              )
+              );
             })}
           </Grid>
         </AccordionDetails>
       </Accordion>
     </Card>
-  )
+  );
 }
 
-export default BillingAndShippingAccordion
+export default BillingAndShippingAccordion;
 //---------------------------------------------------------------------------------------------------------------
 
 AddressItem.propTypes = {
   address: PropTypes.object,
   handleSetShippingAddress: PropTypes.func,
   onCreateBilling: PropTypes.func,
-}
+};
 function AddressItem({ address, handleAddressChange, handleOpen }) {
   const { name, delivery_address, address_title, contact_no, shipping_status } =
-    address
+    address;
 
   return (
     <Card
@@ -167,11 +168,11 @@ function AddressItem({ address, handleAddressChange, handleOpen }) {
       <Stack
         spacing={2}
         alignItems={{
-          md: 'flex-end',
+          md: "flex-end",
         }}
         direction={{
-          xs: 'column',
-          md: 'row',
+          xs: "column",
+          md: "row",
         }}
       >
         <Stack flexGrow={1} spacing={1}>
@@ -180,7 +181,7 @@ function AddressItem({ address, handleAddressChange, handleOpen }) {
               {name}
               <Box
                 component="span"
-                sx={{ ml: 0.5, typography: 'body2', color: 'text.secondary' }}
+                sx={{ ml: 0.5, typography: "body2", color: "text.secondary" }}
                 className="capitalize"
               >
                 ({address_title})
@@ -198,7 +199,7 @@ function AddressItem({ address, handleAddressChange, handleOpen }) {
             {delivery_address}
           </Typography>
 
-          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+          <Typography variant="body2" sx={{ color: "text.secondary" }}>
             {contact_no}
           </Typography>
         </Stack>
@@ -215,15 +216,15 @@ function AddressItem({ address, handleAddressChange, handleOpen }) {
           size="small"
           color="inherit"
           onClick={handleOpen}
-          title={'Edit'}
+          title={"Edit"}
         />
         <AppButton
           variant="contained"
           size="small"
           onClick={handleAddressChange}
-          title={'Deliver to this Address'}
+          title={"Deliver to this Address"}
         />
       </Stack>
     </Card>
-  )
+  );
 }

@@ -1,13 +1,13 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 // @mui
-import { Box, Stack, TableRow, TableCell, Typography } from '@mui/material'
-// utils
-import { getPriceDataByUserType, formatCurrency } from 'src/utils/utils-fun'
-// components
-import { IncrementerButton } from 'src/components/basics/custom-input'
-import { AiOutlineDelete } from 'react-icons/ai'
-import AppIconButton from 'src/components/basics/AppIconButton'
-import Image from 'next/image'
+import { Box, Stack, TableRow, TableCell, Typography } from "@mui/material";
+
+import { AiOutlineDelete } from "react-icons/ai";
+
+import Image from "next/image";
+import { getPriceDataByUserType, formatCurrency } from "utils/utils-fun";
+import AppIconButton from "components /basics/AppIconButton";
+import { IncrementerButton } from "components /basics/custom-input";
 
 // ----------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ CheckoutCartProduct.propTypes = {
   onManualAddOfQuantity: PropTypes.func,
   onDecrease: PropTypes.func,
   onIncrease: PropTypes.func,
-}
+};
 
 export default function CheckoutCartProduct({
   row,
@@ -28,11 +28,11 @@ export default function CheckoutCartProduct({
   onDecrease,
   onIncrease,
 }) {
-  const { title, images, quantity } = row
-  const priceData = getPriceDataByUserType(row, userType)
+  const { title, images, quantity } = row;
+  const priceData = getPriceDataByUserType(row, userType);
   return (
     <TableRow>
-      <TableCell sx={{ display: 'flex', alignItems: 'center' }}>
+      <TableCell sx={{ display: "flex", alignItems: "center" }}>
         <Image
           loading="lazy"
           alt="product image"
@@ -60,27 +60,27 @@ export default function CheckoutCartProduct({
                   direction="row"
                   alignItems="center"
                   sx={{
-                    typography: 'body2',
-                    color: 'text.secondary',
-                    textTransform: 'capitalize',
+                    typography: "body2",
+                    color: "text.secondary",
+                    textTransform: "capitalize",
                   }}
                 >
                   {variant?.title}
-                  {' :'}
+                  {" :"}
                   <Typography
                     sx={{
-                      typography: 'subtitle2',
+                      typography: "subtitle2",
                       ml: 0.5,
-                      textTransform: 'capitalize',
+                      textTransform: "capitalize",
                     }}
                   >
-                    {' '}
-                    {variant?.value}{' '}
+                    {" "}
+                    {variant?.value}{" "}
                   </Typography>
                   {/* <Divider orientation="vertical" sx={{ mx: 1, height: 16 }} /> */}
                   {/* <ColorPreview /> */}
                 </Stack>
-              )
+              );
             })}
         </Stack>
       </TableCell>
@@ -88,7 +88,7 @@ export default function CheckoutCartProduct({
       <TableCell>{formatCurrency(priceData?.perProductPrice)}</TableCell>
 
       <TableCell>
-        <Box sx={{ width: 96, textAlign: 'right' }}>
+        <Box sx={{ width: 96, textAlign: "right" }}>
           <IncrementerButton
             row={row}
             quantity={quantity}
@@ -112,5 +112,5 @@ export default function CheckoutCartProduct({
         />
       </TableCell>
     </TableRow>
-  )
+  );
 }

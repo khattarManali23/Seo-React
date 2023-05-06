@@ -1,24 +1,20 @@
-import { Box } from '@mui/material'
-import { useRouter } from 'next/router'
+import { Box } from "@mui/material";
+import { AppNoProducts, ErrorScreen, LoadingScreen } from "components /basics";
+import { ProductsCard } from "components /cards";
+import { NavbarFooterLayout } from "components /layouts";
+import { useRouter } from "next/router";
 
-import { useSelector } from 'react-redux'
-import {
-  AppNoProducts,
-  ErrorScreen,
-  LoadingScreen,
-} from 'src/components/basics'
-import { ProductsCard } from 'src/components/cards'
-import { NavbarFooterLayout } from 'src/components/layouts'
-// import { ProductFilterSideBar } from 'src/components/product'
-// import { useGetAllCategories } from 'src/services/categoryServices'
-import { useGetAllProductsByAnyCategoryById } from 'src/services/productServices'
+import { useSelector } from "react-redux";
+import { useGetAllProductsByAnyCategoryById } from "services/productServices";
+
+// import { useGetAllProductsByAnyCategoryById } from "src/services/productServices";
 
 const SuperSubCategorySlugPage = () => {
   // console.log(product, categories)
-  const { query } = useRouter()
+  const { query } = useRouter();
 
-  const { superSubCategorySlug, subCategorySlug, categorySlug } = query
-  const { userType, userData } = useSelector((state) => state.user)
+  const { superSubCategorySlug, subCategorySlug, categorySlug } = query;
+  const { userType, userData } = useSelector((state) => state.user);
   // const [anchorEl, setAnchorEl] = useState(null)
   // const [sort, setSort] = useState('')
   // const [category, setCategory] = useState('')
@@ -27,16 +23,16 @@ const SuperSubCategorySlugPage = () => {
     data: products,
     isLoading,
     isError,
-  } = useGetAllProductsByAnyCategoryById(superSubCategorySlug)
+  } = useGetAllProductsByAnyCategoryById(superSubCategorySlug);
   // const {
   //   data: categories,
   //   isLoading: categoriesLoading,
   //   isError: categoriesError,
   // } = useGetAllCategories()
 
-  if (isLoading) return <LoadingScreen />
+  if (isLoading) return <LoadingScreen />;
 
-  if (isError) return <ErrorScreen />
+  if (isError) return <ErrorScreen />;
 
   // // ---------------------------------------------------------------------
   // const open = Boolean(anchorEl)
@@ -137,10 +133,10 @@ const SuperSubCategorySlugPage = () => {
         </Box>
       </div>
     </NavbarFooterLayout>
-  )
-}
+  );
+};
 
-export default SuperSubCategorySlugPage
+export default SuperSubCategorySlugPage;
 
 // export async function getServerSideProps({ params }) {
 //   const response = await api.get('/category/all')
