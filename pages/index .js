@@ -5,8 +5,9 @@ import Link from "next/link";
 
 import api from "../services/api";
 import whatsappIcon from "../assets/hercoPowerImages/svg/whatsappIcon.svg";
-import HomePage from "../components/home";
+
 import { AppData } from "data/app-data";
+import { HomePage } from "components/home";
 // import GlobalSEO from '../data/next-seo.data'
 
 export default function Home({
