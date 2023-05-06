@@ -11,7 +11,7 @@ import BillingAndShippingAccordion from "./BillingAndShippingAccordion";
 import {
   checkoutUserBillingAddress,
   checkoutUserShippingAddress,
-} from "redux /slices/cartSlice";
+} from "redux/slices/cartSlice";
 import AddAddressForm from "components/my-account/AddressForm";
 
 // ----------------------------------------------------------------------

@@ -8,7 +8,7 @@ import { useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { RHFTextField } from "../hook-form/RHFTextField";
-import { login, userDetails } from "../../redux /slices/userSlice";
+import { login, userDetails } from "../../redux/slices/userSlice";
 import api from "../../services/api";
 import {
   useCreateCheckUserType,

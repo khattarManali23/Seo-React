@@ -7,8 +7,8 @@ import {
   addToCart,
   decreaseQuantityInCart,
   increaseQuantityInCart,
-} from "../../redux /slices/cartSlice";
-import { handleToastOpen } from "../../redux /slices/toastSlice";
+} from "../../redux/slices/cartSlice";
+import { handleToastOpen } from "../../redux/slices/toastSlice";
 import { useGetProductById } from "../../services/productServices";
 import { getImageForCart } from "../../utils/utils-fun";
 import { AppCarousel, ErrorScreen } from "../basics";

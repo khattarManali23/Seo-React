@@ -5,8 +5,8 @@ import { useRouter } from "next/router";
 // import React from 'react'
 import { AiOutlineDelete } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "redux /slices/cartSlice";
-import { handleToastOpen } from "redux /slices/toastSlice";
+import { addToCart } from "redux/slices/cartSlice";
+import { handleToastOpen } from "redux/slices/toastSlice";
 
 import { useGetProductById } from "services/productServices";
 import {

@@ -7,7 +7,7 @@ import { CartSideBar } from "../cart";
 import AppIconButton from "../basics/AppIconButton";
 import { Menu, MenuItem, Tooltip } from "@mui/material";
 import { useRouter } from "next/router";
-import { logout } from "../../redux /slices/userSlice";
+import { logout } from "../../redux/slices/userSlice";
 import { useDispatch } from "react-redux";
 import logoImage from "../../assets/hercoPowerImages/logo.png";
 import { BsPersonCircle } from "react-icons/bs";

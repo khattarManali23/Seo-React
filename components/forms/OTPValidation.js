@@ -13,7 +13,7 @@ import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { RHFTextField } from "../hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { userDetails } from "../../redux /slices/userSlice";
+import { userDetails } from "../../redux/slices/userSlice";
 
 function OTPValidation({
   setUserDataInSlice,

@@ -14,13 +14,13 @@ import {
   decreaseQuantityInCart,
   increaseQuantityInCart,
   removeFromCartByCartId,
-} from "../../redux /slices/cartSlice";
+} from "../../redux/slices/cartSlice";
 import AppIconButton from "../basics/AppIconButton";
 import { getPriceDataByUserType, formatCurrency } from "../../utils/utils-fun";
 import { AppButton } from "../basics";
 
 import EmptyContent from "../empty-content/EmptyContent";
-import { handleToastOpen } from "../../redux /slices/toastSlice";
+import { handleToastOpen } from "../../redux/slices/toastSlice";
 
 export default function CartSideBar() {
   const dispatch = useDispatch();

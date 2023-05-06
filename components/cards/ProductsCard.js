@@ -16,7 +16,7 @@ import {
 import { LoginFormCard, LoginImageCard } from "../forms/LoginForm";
 import { useDispatch } from "react-redux";
 // import { addToCart } from 'src/redux/slices/cartSlice'
-import { handleToastOpen } from "../../redux /slices/toastSlice";
+import { handleToastOpen } from "../../redux/slices/toastSlice";
 import { useQueryClient } from "@tanstack/react-query";
 import Link from "next/link";
 import Image from "next/image";

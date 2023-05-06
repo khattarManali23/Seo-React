@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { RHFTextField } from "../hook-form";
 import { AppData } from "../../data/app-data";
-import { login } from "../../redux /slices/userSlice";
+import { login } from "../../redux/slices/userSlice";
 import * as Yup from "yup";
 import { AppButton } from "../basics";
 import FormProvider from "../hook-form";

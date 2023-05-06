@@ -14,7 +14,7 @@ import OrderHistory from "./OrderHistory";
 
 import { useDispatch } from "react-redux";
 import Link from "next/link";
-import { logout } from "redux /slices/userSlice";
+import { logout } from "redux/slices/userSlice";
 // import { getLoginStatus } from "../../redux/slices/contextItems";
 
 export default function MyAccount({ userData, userType }) {

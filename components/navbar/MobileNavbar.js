@@ -9,7 +9,7 @@ import { BsPersonCircle } from "react-icons/bs";
 import { Menu, MenuItem, Tooltip } from "@mui/material";
 import { MdFormatListBulleted, MdLogout } from "react-icons/md";
 import { useDispatch } from "react-redux";
-import { logout } from "../../redux /slices/userSlice";
+import { logout } from "../../redux/slices/userSlice";
 import SearchSideBar from "./SearchSideBar";
 
 export default function MobileNavbar({ userData, userType }) {

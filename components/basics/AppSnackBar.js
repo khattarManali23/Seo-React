@@ -4,7 +4,7 @@ import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import Slide from "@mui/material/Slide";
 import { useDispatch, useSelector } from "react-redux";
-import { handleToastClose } from "../../redux /slices/toastSlice";
+import { handleToastClose } from "../../redux/slices/toastSlice";
 const Alert = forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });

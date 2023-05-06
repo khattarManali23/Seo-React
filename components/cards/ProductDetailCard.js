@@ -7,7 +7,7 @@ import {
   addToCart,
   decreaseQuantityInCart,
   increaseQuantityInCart,
-} from "../../redux /slices/cartSlice";
+} from "../../redux/slices/cartSlice";
 import { useGetProductById } from "../../services/productServices";
 import {
   Grid,
@@ -22,7 +22,7 @@ import {
   ProductDetailsSummary,
   RelatedProducts,
 } from "../product";
-import { handleToastOpen } from "../../redux /slices/toastSlice";
+import { handleToastOpen } from "../../redux/slices/toastSlice";
 // import { getImageForCart } from 'utils/utils-fun'
 import { FaFacebookF, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import { BiLink } from "react-icons/bi";

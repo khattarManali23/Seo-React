@@ -1,8 +1,8 @@
 / eslint-disable no-console /;
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useDispatch } from "react-redux";
-import { handleToastOpen } from "../redux /slices/toastSlice";
-import { login } from "../redux /slices/userSlice";
+import { handleToastOpen } from "../redux/slices/toastSlice";
+import { login } from "../redux/slices/userSlice";
 import api from "./api";
 // customer create with username and password
 export const useCreateRegisterUser = () => {

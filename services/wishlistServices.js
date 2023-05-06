@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useDispatch } from "react-redux";
-import { handleToastOpen } from "../redux /slices/toastSlice";
+import { handleToastOpen } from "../redux/slices/toastSlice";
 import api from "./api";
 
 export const useGetAllWishlist = (id) => {

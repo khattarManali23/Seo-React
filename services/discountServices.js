@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useDispatch } from "react-redux";
-import { handleToastOpen } from "redux /slices/toastSlice";
-import { handleSetDiscountData } from "../redux /slices/cartSlice";
+import { handleToastOpen } from "redux/slices/toastSlice";
+import { handleSetDiscountData } from "../redux/slices/cartSlice";
 
 import api from "./api";
 

@@ -9,7 +9,7 @@ import {
 import { Provider as ReduxProvider } from "react-redux";
 import { config } from "lib/react-query-config";
 
-import store, { persistor } from "redux /store";
+import store, { persistor } from "redux/store";
 import { NavbarFooterLayout } from "components/layouts";
 import ThemeProvider from "styles/ThemeProvider";
 import { GetStarted } from "components/social-login";

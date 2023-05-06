@@ -20,8 +20,8 @@ import {
   handleSetGstData,
   increaseQuantityInCart,
   removeFromCartByCartId,
-} from "../../redux /slices/cartSlice";
-import { handleToastOpen } from "../../redux /slices/toastSlice";
+} from "../../redux/slices/cartSlice";
+import { handleToastOpen } from "../../redux/slices/toastSlice";
 import { useCreateDiscount } from "../../services/discountServices";
 import { useGetAllGst } from "../../services/gstServices";
 
