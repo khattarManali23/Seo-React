@@ -1,6 +1,6 @@
 // import React from 'react'
 
-import { ProductDetailCard } from "components /cards";
+import { ProductDetailCard } from "components/cards";
 
 export default function ProductDetailPage() {
   const url = window.location?.href?.split("/")?.pop();

@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
-import { AppNoProducts, ErrorScreen, LoadingScreen } from "components /basics";
-import { ProductsCard } from "components /cards";
-import { NavbarFooterLayout } from "components /layouts";
+import { AppNoProducts, ErrorScreen, LoadingScreen } from "components/basics";
+import { ProductsCard } from "components/cards";
+import { NavbarFooterLayout } from "components/layouts";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
 import { useGetAllProductsByAnyCategoryById } from "services/productServices";

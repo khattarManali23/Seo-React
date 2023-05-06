@@ -1,5 +1,5 @@
 // import React from 'react'
-import { ErrorScreen } from "../components /basics/ErrorScreen";
+import { ErrorScreen } from "../components/basics/ErrorScreen";
 
 const Custom404Page = () => {
   return <>{/* <ErrorScreen /> */}</>;

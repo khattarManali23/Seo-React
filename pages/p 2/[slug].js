@@ -1,4 +1,4 @@
-import { ProductDetailCard } from "components /cards";
+import { ProductDetailCard } from "components/cards";
 import React from "react";
 // import { ProductDetailCard } from '../components/cards'
 

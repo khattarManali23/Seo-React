@@ -6,16 +6,16 @@ import Image from "next/image";
 import PropTypes from "prop-types";
 import { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
-import { FadeRight } from "../components /animate";
-import { AppButton } from "../components /basics";
-import { ContactInfo } from "../components /contact";
-import { RHFTextField } from "../components /hook-form";
-import FormProvider from "../components /hook-form/FormProvider";
+import { FadeRight } from "../components/animate";
+import { AppButton } from "../components/basics";
+import { ContactInfo } from "../components/contact";
+import { RHFTextField } from "../components/hook-form";
+import FormProvider from "../components/hook-form/FormProvider";
 import GlobalSEO, { SITE_LOGO, SITE_URL } from "../data/next-seo.data";
 import { useCreateContactEnquiry } from "../services/contactServices";
 import { allowOnlyCharacters, allowOnlyNumbers } from "../utils/utils-fun";
 import * as Yup from "yup";
-import contact from "../assets/hercoPowerImages/png/contactpage.jpg";
+// import contact from "../assets/hercoPowerImages/png/contactpage.jpg";
 // ----------------------------------------------------------------------
 // export const config = {
 //   // eslint-disable-next-line camelcase
@@ -108,13 +108,13 @@ export default function ContactUs() {
                     />
                   ) : (
                     <div className="relative h-full w-full">
-                      <Image
+                      {/* <Image
                         loading="lazy"
                         fill
                         alt="contact img"
                         className="h-full w-full object-cover"
                         src={contact}
-                      />
+                      /> */}
                     </div>
                   )}
                 </div>

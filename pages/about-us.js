@@ -1,7 +1,7 @@
 // import React from 'react'
-import { MainAboutPage } from "components /aboutAs";
+import { MainAboutPage } from "components/aboutAs";
 import { DefaultSeo, LogoJsonLd } from "next-seo";
-import { FadeRight } from "../components /animate";
+import { FadeRight } from "../components/animate";
 import GlobalSEO, { SITE_LOGO, SITE_URL } from "../data/next-seo.data";
 
 const AboutUs = () => {

@@ -8,8 +8,8 @@ import {
   CheckoutOrderComplete,
   CheckoutPayment,
   CheckoutSteps,
-} from "../../components /checkout";
-import { LoginForm } from "../../components /forms";
+} from "../../components/checkout";
+import { LoginForm } from "../../components/forms";
 import {
   addManualQuantityInCart,
   // checkoutUserBillingAddress,

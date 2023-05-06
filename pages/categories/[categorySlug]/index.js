@@ -1,7 +1,7 @@
 import { Tab, Tabs } from "@mui/material";
-import { FadeRight } from "components /animate";
-import { AppNoProducts, ErrorScreen, LoadingScreen } from "components /basics";
-import { ProductsCard } from "components /cards";
+import { FadeRight } from "components/animate";
+import { AppNoProducts, ErrorScreen, LoadingScreen } from "components/basics";
+import { ProductsCard } from "components/cards";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";

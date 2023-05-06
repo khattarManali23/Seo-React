@@ -1,8 +1,8 @@
 import { Box } from "@mui/system";
-import { OffersCard } from "components /cards";
+import { OffersCard } from "components/cards";
 import { DefaultSeo, LogoJsonLd } from "next-seo";
 // import React from 'react'
-// import { OffersCard } from 'src/components/offers'
+// import { OffersCard } from './offers'
 import GlobalSEO, { SITE_LOGO, SITE_URL } from "../../data/next-seo.data";
 const Offers = () => {
   const products = [

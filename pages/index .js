@@ -2,10 +2,11 @@ import Head from "next/head";
 import Image from "next/image";
 // import React from 'react'
 import Link from "next/link";
-import { HomePage } from "../../components/home";
-import { AppData } from "../../data/app-data";
+
 import api from "../services/api";
 import whatsappIcon from "../assets/hercoPowerImages/svg/whatsappIcon.svg";
+import HomePage from "../components/home";
+import { AppData } from "data/app-data";
 // import GlobalSEO from '../data/next-seo.data'
 
 export default function Home({

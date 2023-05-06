@@ -1,6 +1,6 @@
 // import React from 'react'
 
-import InvoiceDetails from "components /invoice/details";
+import InvoiceDetails from "components/invoice/details";
 
 export default function invoicePage() {
   const currentInvoice = [

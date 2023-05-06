@@ -10,10 +10,10 @@ import { Provider as ReduxProvider } from "react-redux";
 import { config } from "lib/react-query-config";
 
 import store, { persistor } from "redux /store";
-import { NavbarFooterLayout } from "components /layouts";
+import { NavbarFooterLayout } from "components/layouts";
 import ThemeProvider from "styles/ThemeProvider";
-import { GetStarted } from "components /social-login";
-import { AppSnackBar } from "components /basics";
+import { GetStarted } from "components/social-login";
+import { AppSnackBar } from "components/basics";
 import useDeviceType from "../custom-hooks/useDeviceType";
 import { PersistGate } from "redux-persist/integration/react";
 

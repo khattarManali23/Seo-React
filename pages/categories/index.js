@@ -1,12 +1,13 @@
-import { DefaultSeo, LogoJsonLd } from 'next-seo'
-import { FadeRight } from 'src/components/animate'
-import { ErrorScreen } from 'src/components/basics'
-import { CategoriesCard } from 'src/components/cards'
-import GlobalSEO, { SITE_LOGO, SITE_URL } from 'src/data/next-seo.data'
-import api from '../../services/api'
+import { DefaultSeo, LogoJsonLd } from "next-seo";
+import { FadeRight } from "components/animate";
+
+import GlobalSEO, { SITE_LOGO, SITE_URL } from "data/next-seo.data";
+import api from "../../services/api";
+import { ErrorScreen } from "components/basics";
+import { CategoriesCard } from "components/cards";
 
 const CategoriesPage = ({ categories }) => {
-  console.log('categories', categories)
+  console.log("categories", categories);
   // const {
   //   data,
   //   isLoading = { isLoadingCategories },
@@ -15,15 +16,15 @@ const CategoriesPage = ({ categories }) => {
 
   // if (isLoading) return <LoadingScreen />
 
-  if (!categories?.status) return <ErrorScreen />
+  if (!categories?.status) return <ErrorScreen />;
 
   return (
     <>
       <section className="mx-auto my-10 w-11/12 sm:my-40 sm:w-w-main">
-        <DefaultSeo {...GlobalSEO.global} {...GlobalSEO['/categories']} />
+        <DefaultSeo {...GlobalSEO.global} {...GlobalSEO["/categories"]} />
         <LogoJsonLd logo={SITE_LOGO} url={SITE_URL} />
         {/* <AppHeading title="Categories" /> */}
-        <FadeRight durationTime={'1s'}>
+        <FadeRight durationTime={"1s"}>
           <CategoriesCard
             // isLoadingCategories={}
             data={categories.data}
@@ -36,19 +37,19 @@ const CategoriesPage = ({ categories }) => {
         </FadeRight>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default CategoriesPage
+export default CategoriesPage;
 
 export async function getStaticProps() {
-  const res = await api.get('category/list')
+  const res = await api.get("category/list");
 
-  const categories = res.data
+  const categories = res.data;
 
   return {
     props: {
       categories,
     },
-  }
+  };
 }

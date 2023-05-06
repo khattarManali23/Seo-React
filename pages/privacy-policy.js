@@ -1,14 +1,15 @@
 // import React from 'react'
-import { DefaultSeo } from 'next-seo'
-import { FadeRight } from 'src/components/animate'
-import { AppData } from 'src/data/app-data'
-import GlobalSEO from 'src/data/next-seo.data'
+import { DefaultSeo } from "next-seo";
+import { FadeRight } from "components/animate";
+
+import GlobalSEO from "data/next-seo.data";
+import { AppData } from "data/app-data";
 function PrivacyPolicy() {
-  const { shopEmailIndia } = AppData?.webSiteData
+  const { shopEmailIndia } = AppData?.webSiteData;
   return (
     <>
-      <DefaultSeo {...GlobalSEO.global} {...GlobalSEO['/privacy-policy']} />
-      <FadeRight durationTime={'1s'}>
+      <DefaultSeo {...GlobalSEO.global} {...GlobalSEO["/privacy-policy"]} />
+      <FadeRight durationTime={"1s"}>
         <section className="mx-auto my-16 px-5 md:container md:my-20">
           <h1 className="my-7 text-center font-raleway text-[25px]  font-semibold capitalize tracking-wide">
             Privacy Policy
@@ -61,7 +62,7 @@ function PrivacyPolicy() {
             </div>
             <div className="mb-7">
               <p className="text-justify font-inter text-base font-light leading-7">
-                If you have any questions about our Privacy Policy,{' '}
+                If you have any questions about our Privacy Policy,{" "}
                 <a href={`mailTo:${shopEmailIndia}`}>
                   <span className="theme-heading">{shopEmailIndia}</span>
                 </a>
@@ -71,7 +72,7 @@ function PrivacyPolicy() {
         </section>
       </FadeRight>
     </>
-  )
+  );
 }
 
-export default PrivacyPolicy
+export default PrivacyPolicy;

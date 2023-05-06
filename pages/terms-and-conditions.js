@@ -1,14 +1,14 @@
 // import React from 'react'
 
-import { DefaultSeo } from 'next-seo'
-import GlobalSEO from 'src/data/next-seo.data'
+import { DefaultSeo } from "next-seo";
+import GlobalSEO from "data/next-seo.data";
 
 function TermsAndConditions() {
   return (
     <>
       <DefaultSeo
         {...GlobalSEO.global}
-        {...GlobalSEO['/terms-and-condition']}
+        {...GlobalSEO["/terms-and-condition"]}
       />
       <section className="mx-auto my-16 px-5 md:container md:my-20">
         <h1 className="my-7 text-center text-[25px] font-semibold capitalize tracking-wide text-theme-primary-main">
@@ -18,7 +18,7 @@ function TermsAndConditions() {
           <div className="mb-7">
             <h3 className="my-2 text-[21px] font-[500]">Services overview</h3>
             <p className="text-justify text-base font-light leading-7">
-              {' '}
+              {" "}
               As part of the registration process on the Site, NETAJI SWEETS may
               collect the following personally identifiable information about
               you: Name including first and last name, alternate email address,
@@ -32,7 +32,7 @@ function TermsAndConditions() {
           <div className="mb-7">
             <h3 className="my-2 text-[21px] font-[500]">Eligibility</h3>
             <p className="text-justify text-base font-light leading-7">
-              {' '}
+              {" "}
               Services of the Site would be available to only select geographies
               in India. Persons who are &quot;incompetent to contract&quot;
               within the meaning of the Indian Contract Act, 1872 including
@@ -51,7 +51,7 @@ function TermsAndConditions() {
               License & Site access
             </h3>
             <p className="text-justify text-base font-light leading-7">
-              {' '}
+              {" "}
               NETAJI SWEETS grants you a limited sub-license to access and make
               personal use of this site and not to download (other than page
               caching) or modify it, or any portion of it, except with express
@@ -80,7 +80,7 @@ function TermsAndConditions() {
               Account & Registration Obligations
             </h3>
             <p className="text-justify text-base font-light leading-7">
-              {' '}
+              {" "}
               All shoppers have to register and login for placing orders on the
               Site. You have to keep your account and registration details
               current and correct for communications related to your purchases
@@ -90,7 +90,7 @@ function TermsAndConditions() {
           <div className="mb-7">
             <h3 className="my-2 text-[21px] font-[500]">Pricing</h3>
             <p className="text-justify text-base font-light leading-7">
-              {' '}
+              {" "}
               All the products listed on the Site will be sold at MRP unless
               otherwise specified. The prices mentioned at the time of ordering
               be the prices charged on the date of the delivery. Although prices
@@ -107,7 +107,7 @@ function TermsAndConditions() {
               You Agree and Confirm
             </h3>
             <p className="text-justify text-base font-light leading-7 md:pl-5">
-              {' '}
+              {" "}
               <div className="mb-2 flex items-start">
                 <div className="pr-2">1.</div>
                 <div className="">
@@ -173,7 +173,7 @@ function TermsAndConditions() {
               You may not use the Site for any of the following purposes:
             </h3>
             <p className="text-justify text-base font-light leading-7 md:pl-5">
-              {' '}
+              {" "}
               <div className="mb-2 flex items-start">
                 <div className="pr-2">1.</div>
                 <div className="">
@@ -227,7 +227,7 @@ function TermsAndConditions() {
           <div className="mb-7">
             <h3 className="my-2 text-[21px] font-[500]">Colours</h3>
             <p className="text-justify text-base font-light leading-7">
-              {' '}
+              {" "}
               We have made every effort to display the colours of our products
               that appear on the Website as accurately as possible. However, as
               the actual colours you see will depend on your monitor, we cannot
@@ -240,7 +240,7 @@ function TermsAndConditions() {
               Modification of Terms & Conditions of Service
             </h3>
             <p className="text-justify text-base font-light leading-7">
-              {' '}
+              {" "}
               NETAJI SWEETS may at any time modify the Terms & Conditions of Use
               of the Website without any prior notification to you. You can
               access the latest version of these Terms & Conditions at any given
@@ -257,7 +257,7 @@ function TermsAndConditions() {
               Governing Law and Jurisdiction
             </h3>
             <p className="text-justify text-base font-light leading-7">
-              {' '}
+              {" "}
               This User Agreement shall be construed in accordance with the
               applicable laws of India. The Courts at Nagpur shall have
               exclusive jurisdiction in any proceedings arising out of this
@@ -277,7 +277,7 @@ function TermsAndConditions() {
               Reviews, Feedback, Submissions
             </h3>
             <p className="text-justify text-base font-light leading-7">
-              {' '}
+              {" "}
               All reviews, comments, feedback, postcards, suggestions, ideas,
               and other submissions disclosed, submitted or offered to the Site
               on or by this Site or otherwise disclosed, submitted or offered in
@@ -323,7 +323,7 @@ function TermsAndConditions() {
               Copyright & Trademark
             </h3>
             <p className="text-justify text-base font-light leading-7">
-              {' '}
+              {" "}
               NETAJI SWEETS its suppliers and licensors expressly reserve all
               intellectual property rights in all text, programs, products,
               processes, technology, content and other materials, which appear
@@ -388,7 +388,7 @@ function TermsAndConditions() {
               Objectionable Material
             </h3>
             <p className="text-justify text-base font-light leading-7">
-              {' '}
+              {" "}
               You understand that by using this Site or any services provided on
               the Site, you may encounter Content that may be deemed by some to
               be offensive, indecent, or objectionable, which Content may or may
@@ -402,7 +402,7 @@ function TermsAndConditions() {
           <div className="mb-7">
             <h3 className="my-2 text-[21px] font-[500]">Indemnity</h3>
             <p className="text-justify text-base font-light leading-7">
-              {' '}
+              {" "}
               You agree to defend, indemnify and hold harmless NETAJI SWEETS its
               employees, directors, officers, agents and their successors and
               assigns from and against any and all claims, liabilities, damages,
@@ -424,7 +424,7 @@ function TermsAndConditions() {
           <div className="">
             <h3 className="my-2 text-[21px] font-[500]">Termination</h3>
             <p className="text-justify text-base font-light leading-7">
-              {' '}
+              {" "}
               This User Agreement is effective unless and until terminated by
               either you or NETAJI SWEETS You may terminate this User Agreement
               at any time, provided that you discontinue any further use of this
@@ -445,7 +445,7 @@ function TermsAndConditions() {
         </div>
       </section>
     </>
-  )
+  );
 }
 
-export default TermsAndConditions
+export default TermsAndConditions;

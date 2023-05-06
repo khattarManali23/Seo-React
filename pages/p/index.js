@@ -2,12 +2,12 @@ import { useSelector } from "react-redux";
 // import { ErrorScreen } from "../../components/basics"
 // import { ProductListCard } from "../../components/cards";
 import api from "../../services/api";
-// import { useGetAllCategories } from 'src/services/categoryServices'
+// import { useGetAllCategories } from 'services/categoryServices'
 import { DefaultSeo, LogoJsonLd } from "next-seo";
 import { useRouter } from "next/router";
 import GlobalSEO, { SITE_LOGO } from "../../data/next-seo.data";
-import { ErrorScreen } from "components /basics";
-import { ProductListCard } from "components /cards";
+import { ErrorScreen } from "components/basics";
+import { ProductListCard } from "components/cards";
 
 const Products = ({ productsData }) => {
   const { query } = useRouter();
