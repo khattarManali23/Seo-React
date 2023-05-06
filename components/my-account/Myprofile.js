@@ -9,8 +9,9 @@ import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch } from "react-redux";
 import { useUpdateLoginUserById } from "services/loginRegisterServices";
-import userDetails from "redux/Slices/userSlice";
+
 import { allowOnlyCharacters, allowOnlyNumbers } from "utils/utils-fun";
+import { userDetails } from "redux/slices/userSlice";
 
 export default function Myprofile({ userData, userType }) {
   //other functions
